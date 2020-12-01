@@ -1,0 +1,74 @@
+<!-- Opcion 1 - active -->
+<div class="container btn-group btns-css mt-3" role="group">
+    <button type="button" [routerLink]="'/option1'" class="btn btn-outline-dark active">Opción 1</button>
+    <button type="button" [routerLink]="'/option2'" class="btn btn-outline-dark">Opción 2</button>
+</div>
+
+
+<!-- Mensaje - El 10% de 100 es: 10  -->
+<div class="container animationFade1">
+    <div class="animationFade1 text-center mt-3 alert alert-info alert-dismissible fade show" *ngIf="empty" role="alert">
+        <strong>Ejemplo:</strong> El 10% de 200 es 20.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+</div>
+
+<!-- Calculo input Inicio-->
+<div class="animationFade1">
+    <div class="container input-group mt-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text inputs-css input-percent-css">Valor Inicio</span>
+        </div>
+
+        <input (keyup)="getVal($event.target.value)" type="number" class="form-control placeholder" placeholder="200">
+    </div>
+
+    <!-- Calculo input Porcentaje -->
+    <div class="animationFade1 container mt-3 input-group">
+
+        <div class="input-group-prepend">
+            <span class="input-group-text inputs-css  input-percent-css text-center">Porcentaje</span>
+        </div>
+
+        <input (keyup)="getPercent($event.target.value)" type="number" class="form-control placeholder" placeholder="10">
+
+        <div class="input-group-prepend">
+            <span class="input-group-text inputs-css">%</span>
+        </div>
+
+    </div>
+
+    <!-- Boton Calcular -->
+    <div class="animationFade1 btn-calcular container mt-3">
+        <button (click)="getResult()" (keyup)="getResult()" class="btn btn-outline-dark">Calcular</button>
+
+        <div class="result mt-3">
+
+            <div class="animationFade1 alert alert-danger container-fluid text-center" *ngIf="correcto==false" role="alert">
+                <p>Los valores ingresados son incorrectos.</p>
+            </div>
+
+            <div class="animationFade1 alert alert-success container-fluid text-center mw-100" *ngIf="correcto==true !empty" role="alert ">
+                <p>{{paragraphResult}}</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Historial -->
+    <div class="animationFade1  container mt-5">
+        <div class="historial-css">
+            <h2 class="animationFade1 text-left " *ngIf="record==true">Historial</h2>
+            <button class="animationFade1  btn btn-outline-dark " (click)='clearRecord()' *ngIf="empty==false ">Clear</button>
+        </div>
+
+        <div reversed>
+            <ul class="animationFade1  list-group mb-1 mt-3 " *ngFor="let calculation of calculations">
+                <li class="list-group-item text-center ">{{calculation}}</li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="mb-3"></div>

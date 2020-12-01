@@ -1,0 +1,50 @@
+.op-porcentaje-css {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-calcular {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+}
+
+.historial-css {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputs-css {
+    background-color: white;
+    border: none;
+    padding: x-large;
+}
+
+.form-control {
+    font-size: x-large;
+}
+
+// Button group - opciones
+.btns-css {
+    display: flex;
+    justify-content: center;
+}
+
+// Placeholder
+.placeholder::-webkit-input-placeholder {
+    opacity: 0.3;
+}
+
+// desktop
+@media (min-width: 768px) {
+    .container {
+        max-width: 20%;
+        // display: block;
+    }
+}

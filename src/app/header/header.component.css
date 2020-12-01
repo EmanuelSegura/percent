@@ -1,0 +1,23 @@
+/* Estilo Boton hamburguesa */
+
+.navbar-btn {
+    border: none;
+    outline: none;
+}
+
+.item-navbar-css {
+    margin: 0.5rem;
+}
+
+
+/* Titulo navbar */
+
+.title-nav {
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    border: none;
+    text-align: center;
+    margin: 1rem;
+}
